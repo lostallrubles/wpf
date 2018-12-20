@@ -9,8 +9,10 @@
 
     <UserControl.Resources>
         <Style x:Key="LookAtMe" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Opacity" Value="1"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Navy"/>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Binding.TargetUpdated">
                     <EventTrigger.Actions>
@@ -19,9 +21,9 @@
                                 <!--ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
                                                 From="Transparent" To="Blue" 
                                                 BeginTime="0:0:0" Duration="0:0:0.1"/-->
-                                <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                From="Blue" To="Transparent"
-                                                BeginTime="0:0:0" Duration="0:0:14" />
+                                <DoubleAnimation Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                From="1" To="0.2"
+                                                BeginTime="0:0:0" Duration="0:0:5" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
